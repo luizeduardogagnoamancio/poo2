@@ -40,13 +40,21 @@ public class EditorTexto extends javax.swing.JFrame {
 
     
     private void addButtons(String tema){
+    	FabricaAbstrataBotoes fabrica = null;
         
         if(tema.equalsIgnoreCase("tema1")){
+        	fabrica = new FabricaPadrao();
+        	ok = fabrica.criaBotaoOK();
+        	cancel = fabrica.criaBotaoCancel();
+        	
         }else if(tema.equalsIgnoreCase("tema2")){
+        	fabrica = new FabricaBotaoIcones();
+        	ok = fabrica.criaBotaoOK();
+        	cancel = fabrica.criaBotaoCancel();
         }                
                 
-        cancel = new JButton();
-        ok = new JButton();
+        //cancel = new JButton();
+        //ok = new JButton();
         ok.setText("OK");
         cancel.setText("Cancel");
         
