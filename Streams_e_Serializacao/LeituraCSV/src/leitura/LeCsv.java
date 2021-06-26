@@ -21,22 +21,21 @@ public class LeCsv {
         
         String input = "";
         
-        try (BufferedReader br = new BufferedReader(new FileReader(current + "\\src\\arquivo.csv")))
+        BufferedReader br = new BufferedReader(new FileReader(current + "\\src\\arquivo.csv"));
+        
+        String line = br.readLine();
+        line = br.readLine();
+        while (line != null)
         {
-        	String line = br.readLine();
+        	Cliente cliente = new Cliente();
+        	String[] vect = line.split(";");
+        	cliente.setId(vect[0]);
+        	cliente.setNome(vect[1]);
+        	cliente.setEmail(vect[2]);
+        	cliente.setTelefone(vect[4]);
+        	cliente.setTotalCompras(Double.parseDouble(vect[5]));
+        	clientes.add(cliente);
         	line = br.readLine();
-        	while (line != null)
-        	{
-        		Cliente cliente = new Cliente();
-        		String[] vect = line.split(";");
-        		cliente.setId(vect[0]);
-        		cliente.setNome(vect[1]);
-        		cliente.setEmail(vect[2]);
-        		cliente.setTelefone(vect[4]);
-        		cliente.setTotalCompras(Double.parseDouble(vect[5]));
-        		clientes.add(cliente);
-        		line = br.readLine();
-        	}
         }
         
         
