@@ -12,11 +12,17 @@ public class SaveUsuarioSerializado {
         usuario.setEmail("joao@email.com");        
         usuario.setNome("joao");
         usuario.setSenha("password");
-               
+        
+        
+        Mensagem mensagem = new Mensagem();
+        mensagem.setMensagem("Ola");
+        
+        
         FileOutputStream fileSerializado = new FileOutputStream( 
                 current + "\\src\\usuario_serializado.ser");                
         ObjectOutputStream outputSerializado = new ObjectOutputStream(fileSerializado);        
         outputSerializado.writeObject(usuario);
+        outputSerializado.writeObject(mensagem);
         outputSerializado.close();
         
         System.out.println("Usuario Salvo");        
