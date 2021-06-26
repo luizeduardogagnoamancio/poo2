@@ -44,7 +44,7 @@ public class LeCsv {
             //c = in.read();     		
         //}
         
-        System.out.println(clientes);
+        
         //in.close();
         
         
