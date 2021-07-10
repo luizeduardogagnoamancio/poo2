@@ -19,11 +19,10 @@ public class MainComAdapter {
         ce.setEmail("jose.silva@email.com");
         ce.setNome("Jose");
         ce.setSobreNome("Silva");
+        Adapter clienteAdapter = new Adapter(ce);
         VisaoCliente visao = new VisaoCliente();
-        visao.setInformacoesCliente(cliente);//espera um Cliente
+        visao.setInformacoesCliente(clienteAdapter);//espera um Cliente
         visao.setVisible(true); 
-        
-        
     }
     
 }
