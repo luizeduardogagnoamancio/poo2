@@ -9,9 +9,10 @@ public class TemplateMain {
         String texto = "linha 1\n" 
                 + "linha2\n"
                 + "fim\n";                                
-      ExportFiles export = new ExportFiles();
-      export.exportHTML(texto);
-      export.exportWord(texto);
+      ExportFiles export = new ExportHtml();
+      ExportFiles export2 = new ExportWord();
+      export.export(texto);
+      export2.export(texto);
     }
     
 }
